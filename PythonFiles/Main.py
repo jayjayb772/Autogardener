@@ -1,10 +1,13 @@
 #Import packages
 
 #init
-from sqlite3.dbapi2 import Time
+
+from Time import sleep
 
 from PythonFiles.SensorFiles.MainSensorController import *
 from PythonFiles.ControlFiles.MainPartsController import *
+from PythonFiles.DatabaseFiles.MainDatabaseController import *
+
 curTemp = 0
 lastTemp = 0
 curHumid = 0
@@ -25,6 +28,7 @@ def checkSensorVals():
     curSoilMoisture = getMoistureLevel()
 
 def tempCheck(temp):
+    saveTemp(temp,Time.now())
     if temp > maxTemp:
         lowerTemp()
     if temp < minTemp:
