@@ -18,7 +18,8 @@ def turnFanOff():
 
 
 #Control water pump
-waterTime = 15
+def turnWaterOn():
+    return
 
-def waterPlant():
+def turnWaterOff():
     return
